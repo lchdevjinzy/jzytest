@@ -34,13 +34,13 @@ public class HelloController {
 
         User userBean = userService.getUserPo(name);
 
-        System.out.println(userBean);
+        System.out.println("userBean:"+userBean);
 
         if (userBean != null) {
             return "success";
         } else {
             return "login";
-        }  
+        }
 
     }
-}
+}-
