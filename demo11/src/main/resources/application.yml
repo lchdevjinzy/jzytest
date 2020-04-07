@@ -1,0 +1,23 @@
+server:
+  port: 7001
+
+spring:
+  datasource:
+    name: test
+    url: jdbc:oracle:thin:@jzy-9527:1521/orcl
+    username: demo
+    password: demo
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #配置映射文件
+  type-aliases-package: com.example.demo11.bean.User #配置实体类
+
+
+logging:
+  level:
+    com:
+      example:
+        demo11:
+          mapper:
+            UserMapper: DEBUG
