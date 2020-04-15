@@ -7,13 +7,19 @@
         <id column="ID" property="id"  />
         <result column="USERNAME" property="userName"  />
         <result column="PASSWORD" property="passWord" />
-        <result column="INFO" property="info"  />
+        <result column="SALT" property="salt"  />
     </resultMap>
 
     <select id="getUserPo" parameterType="String" resultMap="BaseResultMap">
-        SELECT id, username, password, info FROM ORG_USER
+        SELECT id, username, password, SALT FROM ORG_USER
            WHERE username = #{name}
     </select>
+
+    <insert id="addUser" parameterType="com.example.demo11.bean.User"  >
+        INSERT INTO ORG_USER (USERNAME,PASSWORD,SALT)
+        VALUES(#{userName},#{passWord},#{salt})
+
+    </insert>
 
 
 </mapper>

@@ -5,7 +5,7 @@ public class User {
     private String id;
     private String userName;
     private String passWord;
-    private String info;
+    private String salt;
 
     public String getId() {
         return id;
@@ -31,12 +31,12 @@ public class User {
         this.passWord = passWord;
     }
 
-    public String getInfo() {
-        return info;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class User {
                 "id='" + id + '\'' +
                 ", userName='" + userName + '\'' +
                 ", passWord='" + passWord + '\'' +
-                ", info='" + info + '\'' +
+                ", salt='" + salt + '\'' +
                 '}';
     }
 }
