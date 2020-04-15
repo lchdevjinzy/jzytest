@@ -42,6 +42,7 @@ public class HelloController {
             res.put("message","fail");
         }
         System.out.println(res.toString());
+        System.out.println(res.toString());
 
         return res;
     }
