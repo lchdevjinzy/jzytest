@@ -4,20 +4,17 @@ server:
 spring:
   datasource:
     name: test
-    url: jdbc:oracle:thin:@jzy-9527:1521/orcl
-    username: demo
-    password: demo
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    #url: jdbc:oracle:thin:@jzy-9527:1521/orcl
+    #username: demo
+    #password: demo
+    #driver-class-name: oracle.jdbc.driver.OracleDriver
 
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapper/*.xml  #配置映射文件
   type-aliases-package: com.example.demo11.bean.User #配置实体类
-
-
-logging:
-  level:
-    com:
-      example:
-        demo11:
-          mapper:
-            UserMapper: DEBUG
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

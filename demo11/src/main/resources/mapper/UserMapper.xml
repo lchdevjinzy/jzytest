@@ -11,7 +11,7 @@
     </resultMap>
 
     <select id="getUserPo" parameterType="String" resultMap="BaseResultMap">
-        SELECT id, username, password, info FROM LG_ORG_USER
+        SELECT id, username, password, info FROM ORG_USER
            WHERE username = #{name}
     </select>
 

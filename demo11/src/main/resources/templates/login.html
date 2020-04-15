@@ -2,12 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>Title</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+
 </head>
 <body>
-    <form role="form" action = "/login" method="post">
-    账号：<input type="text" id="name" name = "name"> <br>
-    <input type="submit" id = "login" value = "login">
-</form>
+
+
+
+<input type="text" id="username" name="username">
+<input type="text" id="password" name="password">
+<input type="button" value="登录" onclick="login()">
+
+
+<p>templates</p>
+
 </body>
 </html>
+<script>
+
+    function login() {
+        $.ajax({
+            url:'/login',
+            data:{name:$('#username').val(),password:$('#password').val()},
+            type: 'post',
+            datatype:'json',
+            success:function (res) {
+               console.log(res);
+                if(res.message=='success'){
+                    window.location.href='/index'
+                }else{
+                    alert('賬號密碼錯誤');
+                    window.location.href='/loginIn'
+                }
+            }
+        })
+    }
+
+</script>
